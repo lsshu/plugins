@@ -1,0 +1,31 @@
+{
+  "name": "lsshu/plugins",
+  "type": "project",
+  "description": "The Lsshu Framework.",
+  "keywords": [
+    "framework",
+    "Lsshu"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "post-autoload-dump": [
+      "@php -v"
+    ],
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "@php -i"
+    ]
+  }
+}
